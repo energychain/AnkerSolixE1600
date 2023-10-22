@@ -31,7 +31,8 @@
     "e1600",
     "corrently",
     "stromdao",
-    "energy"
+    "energy",
+    "node-red"
   ],
   "author": "STROMDAO GmbH <dev@stromdao.com>",
   "license": "Apache-2.0",

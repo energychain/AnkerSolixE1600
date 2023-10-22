@@ -1,0 +1,42 @@
+{
+  "name": "ankersolixe1600",
+  "version": "1.0.0",
+  "description": "Library to access an ANKER Solix Solarbank E1600",
+  "main": "cli.js",
+  "dependencies": {
+    "asynckit": "^0.4.0",
+    "axios": "^1.5.1",
+    "combined-stream": "^1.0.8",
+    "delayed-stream": "^1.0.0",
+    "follow-redirects": "^1.15.3",
+    "form-data": "^4.0.0",
+    "mime-db": "^1.52.0",
+    "mime-types": "^2.1.35",
+    "proxy-from-env": "^1.1.0",
+    "tr46": "^0.0.3",
+    "webidl-conversions": "^3.0.1",
+    "whatwg-url": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energychain/AnkerSolixE1600.git"
+  },
+  "keywords": [
+    "anker",
+    "solix",
+    "e1600",
+    "corrently",
+    "stromdao",
+    "energy"
+  ],
+  "author": "STROMDAO GmbH <dev@stromdao.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/energychain/AnkerSolixE1600/issues"
+  },
+  "homepage": "https://github.com/energychain/AnkerSolixE1600#readme"
+}

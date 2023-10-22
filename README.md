@@ -26,7 +26,7 @@
   <h3 align="center">Anker Solix E1600</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Smart Solar, Bright Tomorrow: Making Every Ray Count.
     <br />
     <a href="https://github.com/energychain/AnkerSolixE1600"><strong>Explore the docs »</strong></a>
     <br />

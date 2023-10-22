@@ -38,5 +38,14 @@
   "bugs": {
     "url": "https://github.com/energychain/AnkerSolixE1600/issues"
   },
+  "node-red": {
+    "version": ">=2.1.0",
+    "nodes": {
+      "E1600": "nr-e1600.js"
+    }
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "homepage": "https://github.com/energychain/AnkerSolixE1600#readme"
 }

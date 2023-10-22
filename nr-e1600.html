@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    RED.nodes.registerType('E1600',{
+        category: 'Corrently',
+        color: '#a0d0a0',
+        defaults: {
+            name: {value:""},
+            username: {value:""},
+            password: {type:"string"},
+            country: {type:"string"}
+        },
+        inputs:1,
+        outputs:2,
+        outputLabels:['Sitemap','Schedule'], 
+        icon: "font-awesome/fa-flash",
+        label: function() {
+            return this.name||"Solix E1600";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="E1600">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-username"><i class="fa fa-tag"></i> Username</label>
+        <input type="text" id="node-input-username" placeholder="(as used in app eq. email)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="fa fa-code"></i> Password</label>
+        <input type="password" id="node-input-password" placeholder="(as used in app)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-text"><i class="fa fa-code"></i> Country Code</label>
+        <input type="text" id="node-input-country" maxlength="2" placeholder="eq. DE">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="E1600">
+    <p>Retrieves status and schedule from <a href="https://corrently.energy/products/anker-solix-solarbank-e1600-vorbestellung" target="_blank">Anker Solix Solarbank E1600</a>.</p>
+</script>

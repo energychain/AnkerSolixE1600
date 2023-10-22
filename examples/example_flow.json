@@ -1,0 +1,92 @@
+[
+    {
+        "id": "68495a0f9b0f0af2",
+        "type": "tab",
+        "label": "Anker Solix E1600 Lib",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ac86e1db88f5b4d0",
+        "type": "E1600",
+        "z": "68495a0f9b0f0af2",
+        "name": "",
+        "username": "thorsten.zoerner@stromdao.com",
+        "password": "Maus12Rad!",
+        "country": "DE",
+        "x": 350,
+        "y": 100,
+        "wires": [
+            [
+                "390f337fbfc40ad9"
+            ],
+            [
+                "89ec8c48c5a440c5"
+            ]
+        ]
+    },
+    {
+        "id": "d6bb748fa40138c0",
+        "type": "inject",
+        "z": "68495a0f9b0f0af2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "ac86e1db88f5b4d0"
+            ]
+        ]
+    },
+    {
+        "id": "390f337fbfc40ad9",
+        "type": "debug",
+        "z": "68495a0f9b0f0af2",
+        "name": "SoC (%)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload.solarbank_list[0].battery_power",
+        "targetType": "msg",
+        "statusVal": "payload.solabank_list[0].battery_power",
+        "statusType": "auto",
+        "x": 520,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "89ec8c48c5a440c5",
+        "type": "debug",
+        "z": "68495a0f9b0f0af2",
+        "name": "Schedule",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 100,
+        "wires": []
+    }
+]

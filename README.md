@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/energychain/AnkerSolixE1600">
-    <img src="images/ankersolixe1600.png" alt="Logo" width="80" height="80">
+    <img src="https://cdn.shopify.com/s/files/1/0665/2506/9578/collections/ankersolixe1600.png?v=1698079497" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Anker Solix E1600</h3>
@@ -187,7 +187,7 @@ https://stromdao.de/<br/>
 [license-url]: https://github.com/energychain/AnkerSolixE1600/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/company/stromdao/?originalSubdomain=de
-[product-screenshot]: images/ankersolixe1600.png
+[product-screenshot]: https://cdn.shopify.com/s/files/1/0665/2506/9578/collections/ankersolixe1600.png?v=1698079497
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

@@ -36,13 +36,24 @@ class SolixE1600 {
      * @return {void}
      */
     async _init() {
-        if((typeof this.loginCredentials == 'undefined')||(this.loginCredentials == null)) {
-            this.loginCredentials = (await this.api.login()).data;
+        if((typeof this.config.loginCredentials == 'undefined')||(this.config.loginCredentials == null)) {
+            const loginResponse = await this.api.login();
+            console.log('LoginResponse',loginResponse);
+            if(loginResponse.code == 100053) {
+                throw new Error(loginResponse.msg);
+            } else {
+                this.config.loginCredentials = loginResponse.data;
+            }
+        }
+        if(typeof this.config.loginCredentials == 'undefined') {
+            throw new Error('Unable to retrieve auth_token during API login');
         }
         if(typeof this.apiSession == 'undefined') {
             try {
-                this.apiSession = this.api.withLogin(this.loginCredentials);
+                this.apiSession = this.api.withLogin(this.config.loginCredentials);
             } catch(e) {
+                console.error(e);
+                delete this.config.loginCredentials;
                 throw new Error("Login failed");
             }
         }
@@ -103,7 +114,14 @@ class SolixE1600 {
      */
     async getSitehomepage() {
         await this._init();
-        const sites = await this.apiSession.siteHomepage();
+        let sites = await this.apiSession.siteHomepage();
+        if(typeof sites == 'undefined') {
+            await new Promise(r => setTimeout(r, 1000));
+            sites = await this.apiSession.siteHomepage();
+            if(typeof sites == 'undefined') {
+                throw new Error("Unable to retrieve Sitehomepage");
+            }
+        }
         return sites.data;
      }
 

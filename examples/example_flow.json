@@ -12,17 +12,18 @@
         "type": "E1600",
         "z": "68495a0f9b0f0af2",
         "name": "",
-        "username": "thorsten.zoerner@stromdao.com",
-        "password": "Maus12Rad!",
+        "username": "username@domain.com",
+        "password": "Password",
         "country": "DE",
-        "x": 350,
-        "y": 100,
+        "x": 510,
+        "y": 240,
         "wires": [
             [
                 "390f337fbfc40ad9"
             ],
             [
-                "89ec8c48c5a440c5"
+                "89ec8c48c5a440c5",
+                "8942b3ae1eddcca6"
             ]
         ]
     },
@@ -48,7 +49,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 100,
+        "y": 180,
         "wires": [
             [
                 "ac86e1db88f5b4d0"
@@ -68,8 +69,8 @@
         "targetType": "msg",
         "statusVal": "payload.solabank_list[0].battery_power",
         "statusType": "auto",
-        "x": 520,
-        "y": 20,
+        "x": 800,
+        "y": 160,
         "wires": []
     },
     {
@@ -85,8 +86,84 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 520,
-        "y": 100,
+        "x": 840,
+        "y": 240,
         "wires": []
+    },
+    {
+        "id": "8942b3ae1eddcca6",
+        "type": "function",
+        "z": "68495a0f9b0f0af2",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f93d5f09d10406ee",
+        "type": "inject",
+        "z": "68495a0f9b0f0af2",
+        "name": "Generic Unload (150W/24h)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"ranges\":[{\"id\":0,\"start_time\":\"00:00\",\"end_time\":\"24:00\",\"turn_on\":true,\"appliance_loads\":[{\"id\":0,\"name\":\"Generic Load\",\"power\":150,\"number\":1}]}],\"min_load\":150,\"max_load\":800,\"step\":50}",
+        "payloadType": "json",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "ac86e1db88f5b4d0"
+            ]
+        ]
+    },
+    {
+        "id": "c8ae762758caebef",
+        "type": "inject",
+        "z": "68495a0f9b0f0af2",
+        "name": "Generic Disable Unload(150W/24h)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"ranges\":[{\"id\":0,\"start_time\":\"00:00\",\"end_time\":\"24:00\",\"turn_on\":false,\"appliance_loads\":[{\"id\":0,\"name\":\"Generic Load\",\"power\":150,\"number\":1}]}],\"min_load\":150,\"max_load\":800,\"step\":50}",
+        "payloadType": "json",
+        "x": 200,
+        "y": 320,
+        "wires": [
+            [
+                "ac86e1db88f5b4d0"
+            ]
+        ]
     }
 ]

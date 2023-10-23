@@ -1,6 +1,6 @@
 {
   "name": "ankersolixe1600",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Library to access an ANKER Solix Solarbank E1600",
   "main": "cli.js",
   "dependencies": {

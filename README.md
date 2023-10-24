@@ -118,6 +118,35 @@ Check the [cli.js](./cli.js) file to see how we are using the library.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Authentication
+This libraray/module uses the APP login credentials of the Anker APP to authenticate with the Anker Cloud Service.
+
+### Step 1: User Authentication
+To start the login process, provide your username and password. These credentials are necessary to establish a secure connection with the Anker Cloud Service:
+```javascript
+const mysolix = new SolixE1600({
+  username: 'EmailAsUsedInAnkerApp',
+  password: 'AccountPassword',
+  country: '2-Letter-Country-Code'
+});
+```
+
+### Step 2: Obtaining the `auth_token`
+
+After successful authentication, you will receive an `auth_token`. This token acts as a session identifier, allowing you to perform actions on behalf of your account. Safeguard this token as it grants access to your session.
+
+### Important Note: Single Device Login
+
+Please note that Anker Cloud Service allows only one device to be logged in at a time. If you attempt to log in from another device while already logged in, the existing session will be terminated.
+
+### Daily Login Limits
+
+Additionally, be aware that the Anker Cloud Service imposes restrictions on the number of logins permitted per day. Make sure to stay within the allowed limits to avoid interruptions in your service.
+
+### Best Practice: Handling Multiple Instances
+
+If you are instantiating this library/module multiple times within your application, it is advisable to manage your sessions efficiently. One recommended approach is to save the session login configuration using the `getSessionConfiguration()` method. By doing so, you can maintain a coherent login state across all instances, ensuring a seamless experience for your users.
+
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -143,7 +172,6 @@ Don't forget to give the project a star! Thanks again!
 Distributed under the Apache-2.0 License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- ACKNOWLEDGMENTS -->
